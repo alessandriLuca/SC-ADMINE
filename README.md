@@ -9,7 +9,7 @@ To know more about the SCA please refer to the following papers:
 The R functions required to execute the SCA are located in RFunction folder and organised in the following folders:
   - 1_AE: Run a sparsely connected autoencoder, which produces as output a cumulative sum of the modelled hidden layer, as well as the matrices of all the modelled hidden layers. The cumulative matrix can be used as input for clustrering algorithms as te one implemented in Seurat software.
   - 2_deepCL: Run a sparsely connected autoencoder embedding a deepclustering algorithm. The output is the latent space on which clustering was performed together with a file providing the association of each cell to a cluster. Cluster can be than visualised on UMAP/tSne representation of the latent space.
-  - 3_PB/PB_GPU: Run a sparsely connected autoencoder to the
-  -  
-In the folder 1_AE, 2_deepCL and 3_PB/PB_GPU are present two folders XX_CPU and XX_GPU. 
+  - 3_PB/PB_GPU: Run a sparsely connected autoencoder on the outpuut of 2_deepCL to provide a pseudo-bulk RNAseq experiment.
+
+In the folder 1_AE, 2_deepCL and 3_PB/PB_GPU are present two folders XX_CPU and XX_GPU, both folder has the same structure and function the only difference is the type of computation framework they use. 
 In the previoulsy indicated folders is present an examplary folder (ExampleRFunction) providing and example how to run the SCA. 
