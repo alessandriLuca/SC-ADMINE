@@ -1,4 +1,4 @@
-Sparsely Connected Autoencoder 4 Single Cell Rna-sEq dAta Mining
+## Sparsely Connected Autoencoder 4 Single Cell Rna-sEq dAta Mining
 The package is organised in R functions controlling the execution of docker containers embedding the Sparsely Connected Autoencoder (SCA).
 The package also provides a version with jupyter lab interface.
 To know more about the SCA please refer to the following papers:
