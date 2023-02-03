@@ -1,4 +1,4 @@
-## Sparsely Connected Autoencoder for Single Cell RNA-seq Data Mining
+## Sparsely Connected Autoencoder for Data Mining in Single Cell RNAseq
 The package is organized into R functions that control the execution of docker containers that embed the Sparsely Connected Autoencoder (SCA). To learn more about the SCA, please refer to the following papers:
 
 - Alessandri L, Calogero RA. Functional-Feature-Based Data Reduction Using Sparsely Connected Autoencoders. Methods Mol Biol. 2023;2584:231-240. doi 10.1007/978-1-0716-2756-3_11. PMID: 36495453.
