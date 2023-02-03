@@ -297,6 +297,17 @@ for nPerm in range(permutation):
     p = multiprocessing.Process(target=createModelAndTrain)
     p.start()
     p.join()
+def sum_csv_matrices(path):
+    dfs = []
+    for filename in os.listdir(path):
+        if filename.endswith('.csv'):
+            df = pd.read_csv(os.path.join(path, filename), index_col=0)
+            dfs.append(df)
+
+    result_df = sum(dfs)
+    result_df.to_csv(path+'sum.csv',sep=sep)
+sum_csv_matrices("./Results/"+projectName+"/permutation/") #Se funziona ho svoltato!!!!!
+print ("ho svoltato")
 os.system("chmod -R 777 /scratch/")
 
 

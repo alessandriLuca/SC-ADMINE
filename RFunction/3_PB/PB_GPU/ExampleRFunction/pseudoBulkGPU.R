@@ -89,7 +89,7 @@ autoencoder4pseudoBulkGPU <- function(group=c("sudo","docker"), scratch.folder, 
     }
     bN=basename(bN)
     #executing the docker job
-    params <- paste("--cidfile ",data.folder,"/dockerID -v ",scrat_tmp.folder,":/scratch -v ", data.folder, ":/data --gpus all -d repbioinfo/featureselection_pseudobulk_gpu python3 /home/autoencoder.py ",matrixNameC,".",format," ",separator," ",permutation," ",nEpochs," ",patiencePercentage," ",projectName," ",seed," ",bN," ",lr," ",beta_1," ",beta_2," ",epsilon," ",decay," ",loss,sep="")
+    params <- paste("--cidfile ",data.folder,"/dockerID -v ",scrat_tmp.folder,":/scratch -v ", data.folder, ":/data --gpus all -d repbioinfo/pseudobulk_gpu python3 /home/autoencoder.py ",matrixNameC,".",format," ",separator," ",permutation," ",nEpochs," ",patiencePercentage," ",projectName," ",seed," ",bN," ",lr," ",beta_1," ",beta_2," ",epsilon," ",decay," ",loss,sep="")
 
     resultRun <- runDocker(group=group, params=params)
 
