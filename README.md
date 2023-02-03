@@ -1,15 +1,25 @@
-## Sparsely Connected Autoencoder 4 Single Cell Rna-sEq dAta Mining
-The package is organised in R functions controlling the execution of docker containers embedding the Sparsely Connected Autoencoder (SCA).
-The package also provides a version with jupyter lab interface.
-To know more about the SCA please refer to the following papers:
-  - Alessandri L, Calogero RA. Functional-Feature-Based Data Reduction Using Sparsely Connected Autoencoders. Methods Mol Biol. 2023;2584:231-240. doi 10.1007/978-1-0716-2756-3_11. PMID: 36495453.
-  - Alessandri et al. Sparsely Connected Autoencoders: A Multi-Purpose Tool for Single Cell omics Analysis. Int J Mol Sci. 2021 Nov 25;22(23):12755. doi: 10.3390/ijms222312755. PMID: 34884559.
-  - Alessandri et al. Sparsely-connected autoencoder (SCA) for single cell RNAseq data mining. NPJ Syst Biol Appl. 2021 Jan 5;7(1):1. doi:10.1038/s41540-020-00162-6. PMID: 33402683.
+## Sparsely Connected Autoencoder for Single Cell RNA-seq Data Mining
+The package is organized into R functions that control the execution of docker containers that embed the Sparsely Connected Autoencoder (SCA). To learn more about the SCA, please refer to the following papers:
 
-The R functions required to execute the SCA are located in RFunction folder and organised in the following folders:
-  - 1_AE: Run a sparsely connected autoencoder, which produces as output a cumulative sum of the modelled hidden layer, as well as the matrices of all the modelled hidden layers. The cumulative matrix can be used as input for clustrering algorithms as te one implemented in Seurat software.
-  - 2_deepCL: Run a sparsely connected autoencoder embedding a deepclustering algorithm. The output is the latent space on which clustering was performed together with a file providing the association of each cell to a cluster. Cluster can be than visualised on UMAP/tSne representation of the latent space.
-  - 3_PB/PB_GPU: Run a sparsely connected autoencoder on the outpuut of 2_deepCL to provide a pseudo-bulk RNAseq experiment.
+- Alessandri L, Calogero RA. Functional-Feature-Based Data Reduction Using Sparsely Connected Autoencoders. Methods Mol Biol. 2023;2584:231-240. doi 10.1007/978-1-0716-2756-3_11. PMID: 36495453.
+- Alessandri et al. Sparsely Connected Autoencoders: A Multi-Purpose Tool for Single Cell omics Analysis. Int J Mol Sci. 2021 Nov 25;22(23):12755. doi: 10.3390/ijms222312755. PMID: 34884559.
+- Alessandri et al. Sparsely-connected autoencoder (SCA) for single cell RNAseq data mining. NPJ Syst Biol Appl. 2021 Jan 5;7(1):1. doi:10.1038/s41540-020-00162-6. PMID: 33402683.
 
-In the folder 1_AE, 2_deepCL and 3_PB/PB_GPU are present two folders XX_CPU and XX_GPU, both folder has the same structure and function the only difference is the type of computation framework they use. 
-In the previoulsy indicated folders is present an examplary folder (ExampleRFunction) providing and example how to run the SCA. 
+## R Functions for SCA
+The R functions needed to perform the SCA can be found in the `RFunction` folder, which is organized into the following sub-folders:
+
+## 1_AE
+Runs a sparse autoencoder that produces a cumulative sum of the modeled hidden layer and the matrices of all modeled hidden layers as output. The cumulative matrix can be used as input for clustering algorithms such as the one implemented in the Seurat software.
+
+## 2_deepCL
+Runs a sparse autoencoder with a deep clustering algorithm embedded. The output is the latent space on which clustering was performed, along with a file indicating the cluster association for each cell. The clusters can be visualized on UMAP/tSne representations of the latent space.
+
+## 3_PB/PB_GPU
+Runs a sparse autoencoder on the output from 2_deepCL to produce a pseudo-bulk RNAseq experiment.
+
+## 4_DPV
+Runs a Dense Projection + Visualization using either the tSne or UMAP algorithm.
+
+For functions 1, 2, and 3, you can choose to run them on a GPU or CPU (docker and functions for both options are provided).
+
+The `docker` folder contains all the necessary files to build each docker from scratch. You can choose to build your own docker, modify it, or use the docker available on our repository (`repbioinfo/`). Only modify and use the folder if you want to use a different/modified docker than the one on the repository.
