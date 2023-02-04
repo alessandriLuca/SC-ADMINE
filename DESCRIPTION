@@ -1,0 +1,19 @@
+Package: scADMINE
+Version: 1.0.0
+Date: 2023-02-4
+Title: Sparsely Connected Autoencoder for Data Mining in Single Cell RNAseq
+Authors@R: c(person("Luca", "Alessandri", role = "aut"),person("Raffaele", "Calogero", role = c("aut", "cre"),
+                     email = "raffaele.calogero@unito.it"))
+Author:
+    Luca Alessandri [aut,cre]
+    Raffaele Calogero [aut]
+Maintainer: Luca Alessandri <alessandri.luca91@gmail.com>
+Depends:
+    R (>= 3.0.0)
+VignetteBuilder: knitr
+Suggests: BiocStyle, knitr, rmarkdown
+BiocStyle: :html_document
+Description: A collection of functions to analyse single cell data.
+License: GPL (>= 2)
+Encoding: UTF-8
+RoxygenNote: 7.2.1

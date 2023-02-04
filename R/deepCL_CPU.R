@@ -18,7 +18,7 @@
 #' deepClustering(group=c("docker"), scratch.folder="/scratch/", file="/home/lucastormreig/clustering_autoencoder/DCA/Rfunction/setA2.csv",separator=",", nCluster=5, bias="TF", finetune_iters=3, nEpochs=2,seed=1111,projectName="TF",bN="NULL")
 #'}
 #' @export
-deepClustering <- function(group=c("sudo","docker"), scratch.folder, file,separator, nCluster, bias, finetune_iters=100000, nEpochs=50000,seed=1111,projectName,bN="NULL"){
+deepClusteringCPU <- function(group=c("sudo","docker"), scratch.folder, file,separator, nCluster, bias, finetune_iters=100000, nEpochs=50000,seed=1111,projectName,bN="NULL"){
 
   data.folder=dirname(file)
 positions=length(strsplit(basename(file),"\\.")[[1]])
