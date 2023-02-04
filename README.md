@@ -23,3 +23,6 @@ Runs a Dense Projection + Visualization using either the tSne or UMAP algorithm.
 For functions 1, 2, and 3, you can choose to run them on a GPU or CPU (docker and functions for both options are provided).
 
 The `docker` folder contains all the necessary files to build each docker from scratch. You can choose to build your own docker, modify it, or use the docker available on our repository (`repbioinfo/`). Only modify and use the folder if you want to use a different/modified docker than the one on the repository.
+
+## INSTALL 
+install_github("alessandriLuca/SC-ADMINE", ref="main")
