@@ -1,0 +1,105 @@
+#1 [internal] load .dockerignore
+#1 transferring context: 2B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.96kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/tensorflow/tensorflow:devel-gpu
+#3 DONE 10.2s
+
+#4 [ 1/26] FROM docker.io/tensorflow/tensorflow:devel-gpu@sha256:2c84d1c2ad8532086c56429931c79eb90f951d7178ea161fdb499e2d59f9ac93
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 29.98MB 0.1s
+#5 transferring context: 773.47MB 2.4s done
+#5 DONE 2.4s
+
+#6 [16/26] COPY pipdeptree-2.1.0-py3-none-any.whl /tmp/
+#6 CACHED
+
+#7 [ 5/26] RUN apt-get update     && apt-get install -y wget     && mkdir data 	&& apt-get -y install build-essential 	&& cd /tmp/ && make 	&& make all 	&& cp ./bin/7za /bin
+#7 CACHED
+
+#8 [ 9/26] RUN apt-get install -y sqlite3
+#8 CACHED
+
+#9 [24/26] RUN pip3 install cuml-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
+#9 CACHED
+
+#10 [13/26] RUN cd /Python-3.8.6/ && ./configure --enable-loadable-sqlite-extensions --enable-optimizations
+#10 CACHED
+
+#11 [17/26] RUN apt-get update     && apt-get install -y git
+#11 CACHED
+
+#12 [21/26] COPY Python3.8.6_toBeInstalled/listForDockerfile.sh /tmp/
+#12 CACHED
+
+#13 [19/26] COPY Python3.8.6_toBeInstalled/install_files.7z* /tmp/
+#13 CACHED
+
+#14 [ 6/26] RUN apt-get update
+#14 CACHED
+
+#15 [10/26] RUN apt-get install -y libsqlite3-dev
+#15 CACHED
+
+#16 [ 2/26] RUN apt-get update     && apt-get -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget     && apt-get -y install libblas-dev liblapack-dev     && apt-get -y install libatlas-base-dev     && apt-get -y install gfortran     && apt-get -y install libxml2-dev libxmlsec1-dev     && apt-get install -y libbz2-dev     && apt-get -y install pkg-config    && apt-get update && apt-get install -y --no-install-recommends apt-utils     && apt-get -y install libhdf5-dev
+#16 CACHED
+
+#17 [ 7/26] RUN apt-get install -y liblzma-dev
+#17 CACHED
+
+#18 [11/26] COPY Python-3.8.6.tgz /tmp/Python-3.8.6.tgz
+#18 CACHED
+
+#19 [14/26] RUN cd /Python-3.8.6/ && make
+#19 CACHED
+
+#20 [20/26] RUN cd /tmp/ && 7za -y x "*.7z*"
+#20 CACHED
+
+#21 [ 3/26] RUN apt-get update && apt install -y libudunits2-dev libgdal-dev
+#21 CACHED
+
+#22 [ 8/26] RUN apt-get update
+#22 CACHED
+
+#23 [18/26] RUN pip3 install /tmp/pipdeptree-2.1.0-py3-none-any.whl
+#23 CACHED
+
+#24 [12/26] RUN tar -xzvf /tmp/Python-3.8.6.tgz
+#24 CACHED
+
+#25 [23/26] RUN pip3 install cudf-cu11 dask-cudf-cu11 --extra-index-url=https://pypi.ngc.nvidia.com --use-feature=2020-resolver
+#25 CACHED
+
+#26 [15/26] RUN cd /Python-3.8.6/ && make install
+#26 CACHED
+
+#27 [22/26] RUN /tmp/listForDockerfile.sh
+#27 CACHED
+
+#28 [25/26] RUN pip3 install cugraph-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
+#28 CACHED
+
+#29 [ 4/26] COPY p7zip_16.02 /tmp/
+#29 CACHED
+
+#30 [26/26] COPY datas/ /home/
+#30 DONE 0.1s
+
+#31 exporting to image
+#31 exporting layers
+#31 exporting layers 25.1s done
+#31 writing image sha256:b30e633fb139867dc9225dee3fc49c400e1269a1322ac210590330357405e510
+#31 writing image sha256:b30e633fb139867dc9225dee3fc49c400e1269a1322ac210590330357405e510 done
+#31 naming to docker.io/repbioinfo/deepclae_gpu done
+#31 DONE 25.1s
+mkdir: cannot create directory ‘/home/lucastormreig/git/SC-ADMINE/docker/2_DeepCL/DeepCL_GPU’: File exists
+cp: './configurationFile.txt' and '/home/lucastormreig/git/SC-ADMINE/docker/2_DeepCL/DeepCL_GPU/configurationFile.txt' are the same file
+rm: cannot remove '/home/lucastormreig/git/SC-ADMINE/docker/2_DeepCL/DeepCL_GPU/id.txt': No such file or directory
+the input device is not a TTY

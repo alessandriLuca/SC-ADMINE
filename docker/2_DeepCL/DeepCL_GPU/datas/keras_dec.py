@@ -24,7 +24,7 @@ from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 import matplotlib.cm as cm    
 from sklearn.manifold import TSNE
-
+import cuml
 if (sys.version[0] == 2):
     import cPickle as pickle
 else:
@@ -327,10 +327,17 @@ class DeepEmbeddingClustering(object):
             #self.n_cluster=len(np.unique(brc.labels_))
             #print("Yojohn")
             #print(self.n_cluster)
-            kmeans = KMeans(n_clusters=self.n_clusters, n_init=20)
-            self.y_pred = kmeans.fit_predict(U)
-            self.cluster_centres = kmeans.cluster_centers_
-
+            #kmeans = KMeans(n_clusters=self.n_clusters, n_init=20) #YO
+            #self.y_pred = kmeans.fit_predict(U)   #YO
+            #self.cluster_centres = kmeans.cluster_centers_    #YO
+            kmeans = cuml.KMeans(n_clusters=self.n_clusters)
+            kmeans.fit(U)
+            self.cluster_centres= kmeans.cluster_centers_
+            self.y_pred= kmeans.labels_
+            print("jennifeeeer")
+            print(self.cluster_centres)
+            print("jennifeeeer")
+            print(self.y_pred)
         # prepare DEC model
         #self.DEC = Model(inputs=self.input_layer,
         #                 outputs=ClusteringLayer(self.n_clusters,

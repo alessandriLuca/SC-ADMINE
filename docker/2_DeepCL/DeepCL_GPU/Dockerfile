@@ -38,4 +38,7 @@ COPY Python3.8.6_toBeInstalled/install_files.7z* /tmp/
 RUN cd /tmp/ && 7za -y x "*.7z*"
 COPY Python3.8.6_toBeInstalled/listForDockerfile.sh /tmp/
 RUN /tmp/listForDockerfile.sh
+RUN pip3 install cudf-cu11 dask-cudf-cu11 --extra-index-url=https://pypi.ngc.nvidia.com --use-feature=2020-resolver
+RUN pip3 install cuml-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
+RUN pip3 install cugraph-cu11 --extra-index-url=https://pypi.ngc.nvidia.com
 COPY datas/ /home/
