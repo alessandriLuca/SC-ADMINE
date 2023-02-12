@@ -18,11 +18,11 @@ Runs a sparse autoencoder with a deep clustering algorithm embedded. The output 
 Runs a sparse autoencoder on the output from 2_deepCL to produce a pseudo-bulk RNAseq experiment.
 
 ## 4_DPV
-Runs a Dense Projection + Visualization using either the tSne or UMAP algorithm.
+Provides a visualisation of the latent space data using either tSne or UMAP algorithm.
 
 For functions 1, 2, and 3, you can choose to run them on a GPU or CPU (docker and functions for both options are provided).
 
-The `docker` folder contains all the necessary files to build each docker from scratch. You can choose to build your own docker, modify it, or use the docker available on our repository (`repbioinfo/`). Only modify and use the folder if you want to use a different/modified docker than the one on the repository.
+User might decide to build a new docker, by modify the files available in the docker folder, or use the docker available on our repository on docker hub (`repbioinfo`). 
 
 ## INSTALL 
 ```
